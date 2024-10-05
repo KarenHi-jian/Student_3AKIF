@@ -4,6 +4,7 @@ public class Student
     private int alter;       // Alter des Studierende
     private String religion; //....
     private boolean matura;
+    //Cunstructor
     
     public Student(String neuName,int neuAlter,String neuReligion,boolean neuMatura)
     {
@@ -13,6 +14,29 @@ public class Student
        setMatura(neuMatura);
     }
     
+    public Student(String neuName,int neuAlter, String neuReligion)
+    {
+        setName(neuName);
+        setAlter(neuAlter);
+        setReligion(neuReligion);
+        setMatura(false);
+    }
+    
+    public Student(String neuName)
+    {
+        setName(neuName);
+        setAlter(14);
+        setReligion("ob");
+        setMatura(false);       
+    }
+    
+    public Student()
+    {
+        setName("UNKN");
+        setAlter(14);
+        setReligion("ob");
+        setMatura(false);
+    }
 
     public void setName(String neuName)
     {

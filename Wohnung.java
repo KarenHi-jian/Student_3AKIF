@@ -1,3 +1,4 @@
+
 public class Wohnung
 {
     private String ort;
@@ -5,27 +6,26 @@ public class Wohnung
     private boolean gefordert;
     private int preis;
     private int anzZimmer;
-
-    public Wohnung()
+    
+    public Wohnung ()
     {
         setOrt("Wien");
         setBalkon(true);
         setGefordert(false);
         setPreis(200000);
         setAnzZimmer(4);
-        
     }
-
-    public Wohnung(String ort, boolean balkon, boolean gefordert,int preis,int anzZimmer)
+    
+    public Wohnung(String ort,boolean blakon, boolean gefordert,int preis, int anzZimmer)
     {
         setOrt(ort);
-        setBalkon(balkon);
-        setGefordert(gefordert);
+        setBalkon(true);
+        setGefordert(false);
         setPreis(preis);
         setAnzZimmer(anzZimmer);
     }
     
-    public Wohnung (String ort, boolean balkom, boolean geforfert, int preis)
+    public Wohnung(String ort, boolean balkon, boolean gefordert, int preis)
     {
         setOrt(ort);
         setBalkon(balkon);
@@ -34,7 +34,7 @@ public class Wohnung
         setAnzZimmer(4);
     }
     
-    public Wohnung (String ort, boolean balkon,boolean gefordert)
+    public Wohnung(String ort,boolean balkon,boolean gefordert)
     {
         setOrt(ort);
         setBalkon(balkon);
@@ -43,16 +43,17 @@ public class Wohnung
         setAnzZimmer(4);
     }
     
-    public Wohnung (String ort, boolean balkon)
+    public Wohnung(String ort, boolean balkon)
     {
         setOrt(ort);
         setBalkon(balkon);
-        setGefordert(true);
+        setGefordert(false);
         setPreis(200000);
         setAnzZimmer(4);
+        
     }
     
-    public Wohnung (String ort)
+    public Wohnung(String ort)
     {
         setOrt(ort);
         setBalkon(true);
@@ -61,71 +62,82 @@ public class Wohnung
         setAnzZimmer(4);
     }
     
-
-    public void setOrt(String ort)
+    public void setOrt (String ort)
     {
-        this.ort = ort;
+        this.ort=ort;
     }
-
+    
     public void setBalkon(boolean balkon)
     {
-        this.balkon = balkon;
-    
+        this.balkon=balkon;
     }
     
     public void setGefordert(boolean gefordert)
     {
-       this.gefordert = gefordert; 
+        this.gefordert=gefordert;
     }
     
-    public void setPreis( int preis)
+    public void setPreis(int preis)
     {
-        this.preis = preis;
+        this.preis=preis;
     }
     
-    public void setAnzZimmer( int anzZimmer)
+    public void setAnzZimmer(int anzZimmer)
     {
-        this.anzZimmer = anzZimmer;
+        if ((anzZimmer >= 1) && (anzZimmer <= 7))
+        {
+            this.anzZimmer=anzZimmer;
+        }
+        else
+        {
+            System.out.println("Fehler : Üngultiges AnzZimmer. AnzZimmer between 1 und 7");
+            this.anzZimmer=4;
+        }
     }
     
     public String getOrt()
     {
         return ort;
     }
-
+    
     public boolean getBalkon()
     {
         return balkon;
-        
     }
     
-    public boolean getGefordert()
+    public boolean getGefordert ()
     {
         return gefordert;
     }
     
-    public int getPreis()
+    public int getPreis ()
     {
         return preis;
     }
-
-    public int getanzZimmer()
+    
+    public int getAnzZimmer()
     {
         return anzZimmer;
     }
-
-   
+    
     public void printWohnung()
     {
         if (balkon == true)
-        {   
-            System.out.println(ort + " - " +  anzZimmer  + " Zimmer - "  + preis + " Euro " + "(Balkon)");
-        }
-        else 
         {
-            System.out.println(ort + " - " + anzZimmer + " Zimmer  - " + preis + " Euro " + " keine balkon ");
+        System.out.println(ort + ":"  + "Balkon" +"-" + gefordert + " - " + preis  + " Euro " + anzZimmer + " Zimmer");
+        }
+        else
+        {
+          System.out.println(ort + ":"  + "kein balkon" + "-" + gefordert + " - " + preis + " Euro " + anzZimmer + " Zimmer");
+        }
+        
+        if (gefordert == true)
+        {
+          System.out.println(ort + ":"  + "Balkon" +"-" + "Gefordert "+" - " + preis  + " Euro " + anzZimmer + " Zimmer");
+        }
+        else
+        {
+            System.out.println(ort + ":"  + "Balkon" +"-" + "Nicht Gefordert" + " - " + preis + " Euro " + anzZimmer + " Zimmer");
         }
     }
 }
-
-

@@ -11,7 +11,7 @@ public class WohnungJUnit
     public void SemiTestZuviel()
     {
         Wohnung wien;
-        wien=new Wohnung ("wien",true,false,200000,9);
+        wien=new Wohnung ("wien",true,false,200000);
         assertEquals(wien.getAnzZimmer(),4);
     }
     

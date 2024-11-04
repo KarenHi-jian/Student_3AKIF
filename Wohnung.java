@@ -124,7 +124,7 @@ public class Wohnung
     {
         if (balkon == true)
         {
-        System.out.println(ort + ":"  + "Balkon" +"-" + gefordert + " - " + preis  + " Euro " + anzZimmer + " Zimmer");
+        System.out.println(ort + " : "  + "Balkon" +" - " + gefordert + " - " + preis  + " Euro " + anzZimmer + " Zimmer");
         }
         else
         {

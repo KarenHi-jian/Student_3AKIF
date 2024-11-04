@@ -142,14 +142,9 @@ public class Wohnung
         String Hausnummer;
         int pos1;
         int pos2;
+        
         pos1=strasse.indexOf(" ")+1;
         pos2=strasse.indexOf("/");
-        {
-           if (pos1 >0)
-            {
-            Hausnummer= strasse.substring(pos1);
-            }
-        }
         
         Hausnummer=strasse.substring(pos1,pos2);
         

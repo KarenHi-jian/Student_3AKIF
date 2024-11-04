@@ -1,7 +1,7 @@
-
 public class Wohnung
 {
     private String ort;
+    private String strasse;
     private boolean balkon;
     private boolean gefordert;
     private int preis;
@@ -10,61 +10,81 @@ public class Wohnung
     public Wohnung ()
     {
         setOrt("Wien");
+        setStrasse("Spengergasse 10/5/3A");
         setBalkon(true);
         setGefordert(false);
         setPreis(200000);
         setAnzZimmer(4);
     }
     
-    public Wohnung(String ort,boolean blakon, boolean gefordert,int preis, int anzZimmer)
+    public Wohnung(String ort, String strasse, boolean balkon, boolean gefordert,int preis, int anzZimmer)
     {
         setOrt(ort);
-        setBalkon(true);
-        setGefordert(false);
+        setStrasse(strasse);
+        setBalkon(balkon);
+        setGefordert(gefordert);
         setPreis(preis);
         setAnzZimmer(anzZimmer);
     }
     
-    public Wohnung(String ort, boolean balkon, boolean gefordert, int preis)
+    public Wohnung(String ort, String strasse, boolean balkon, boolean gefordert,int preis)
     {
         setOrt(ort);
+        setStrasse(strasse);
         setBalkon(balkon);
         setGefordert(gefordert);
         setPreis(preis);
         setAnzZimmer(4);
     }
     
-    public Wohnung(String ort,boolean balkon,boolean gefordert)
+    public Wohnung(String ort,String strasse, boolean balkon, boolean gefordert)
     {
         setOrt(ort);
+        setStrasse(strasse);
         setBalkon(balkon);
         setGefordert(gefordert);
         setPreis(200000);
         setAnzZimmer(4);
     }
     
-    public Wohnung(String ort, boolean balkon)
+    public Wohnung(String ort, String strasse, boolean balkon)
     {
         setOrt(ort);
+        setStrasse(strasse);
         setBalkon(balkon);
         setGefordert(false);
         setPreis(200000);
         setAnzZimmer(4);
-        
     }
     
-    public Wohnung(String ort)
+    public Wohnung(String ort, String strasse)
     {
-        setOrt(ort);
-        setBalkon(true);
-        setGefordert(false);
-        setPreis(200000);
-        setAnzZimmer(4);
+       setOrt(ort);
+       setStrasse(strasse);
+       setBalkon(true);
+       setGefordert(false);
+       setPreis(200000);
+       setAnzZimmer(4);
     }
     
-    public void setOrt (String ort)
+    public Wohnung(String Ort)
+    {
+       setOrt(ort);
+       setStrasse("Spengergasse 10/5/3A");
+       setBalkon(true);
+       setGefordert(false);
+       setPreis(200000);
+       setAnzZimmer(4);
+    }
+    
+    public void setOrt(String ort)
     {
         this.ort=ort;
+    }
+    
+    public void setStrasse(String strasse)
+    {
+        this.strasse=strasse;
     }
     
     public void setBalkon(boolean balkon)
@@ -84,20 +104,17 @@ public class Wohnung
     
     public void setAnzZimmer(int anzZimmer)
     {
-        if ((anzZimmer >= 1) && (anzZimmer <= 7))
-        {
-            this.anzZimmer=anzZimmer;
-        }
-        else
-        {
-            System.out.println("Fehler : Üngultiges AnzZimmer. AnzZimmer between 1 und 7");
-            this.anzZimmer=4;
-        }
+        this.anzZimmer=anzZimmer;
     }
     
     public String getOrt()
     {
-        return ort;
+       return ort; 
+    }
+    
+    public String getStrasse()
+    {
+        return strasse;
     }
     
     public boolean getBalkon()
@@ -105,12 +122,12 @@ public class Wohnung
         return balkon;
     }
     
-    public boolean getGefordert ()
+    public boolean getGefordert()
     {
         return gefordert;
     }
     
-    public int getPreis ()
+    public int getPreis()
     {
         return preis;
     }
@@ -120,24 +137,40 @@ public class Wohnung
         return anzZimmer;
     }
     
-    public void printWohnung()
+    public String getHausnummer()
     {
-        if (balkon == true)
+        String Hausnummer;
+        int pos1;
+        int pos2;
+        pos1=strasse.indexOf(" ")+1;
+        pos2=strasse.indexOf("/");
         {
-        System.out.println(ort + " : "  + "Balkon" +" - " + gefordert + " - " + preis  + " Euro " + anzZimmer + " Zimmer");
-        }
-        else
-        {
-          System.out.println(ort + ":"  + "kein balkon" + "-" + gefordert + " - " + preis + " Euro " + anzZimmer + " Zimmer");
+           if (pos1 >0)
+            {
+            Hausnummer= strasse.substring(pos1);
+            }
         }
         
-        if (gefordert == true)
-        {
-          System.out.println(ort + ":"  + "Balkon" +"-" + "Gefordert "+" - " + preis  + " Euro " + anzZimmer + " Zimmer");
-        }
-        else
-        {
-            System.out.println(ort + ":"  + "Balkon" +"-" + "Nicht Gefordert" + " - " + preis + " Euro " + anzZimmer + " Zimmer");
-        }
+        Hausnummer=strasse.substring(pos1,pos2);
+        
+        return Hausnummer;
+    }
+    
+    
+    public String getStock()
+    {
+        String stock;
+        int pos1;
+        int pos2;
+        pos1=strasse.indexOf("/")+1;
+        pos2=strasse.indexOf(("/"),pos1);
+        stock=strasse.substring(pos1,pos2);
+        
+        return stock;
     }
 }
+
+    
+    
+
+    

@@ -11,7 +11,7 @@ public class WohnungJUnit
     public void SemiTestZuviel()
     {
         Wohnung wien;
-        wien=new Wohnung ("wien",true,false,200000);
+        wien=new Wohnung ("wien","Spengergasse 10/5/3A",true,false,200000);
         assertEquals(wien.getAnzZimmer(),4);
     }
     
@@ -19,7 +19,7 @@ public class WohnungJUnit
     public void SemiTestOk()
     {
         Wohnung wien;
-        wien = new Wohnung ("wien", true,false,200000,4);
+        wien = new Wohnung ("wien","Spengergasse 10/5/3A", true,false,200000,4);
     }
 
 }

@@ -77,6 +77,16 @@ public class Wohnung
        setAnzZimmer(4);
     }
     
+    public Wohnung(int preis)
+    {
+        setOrt("Wien");
+        setStrasse("Spengergasse 10/5/3A");
+        setBalkon(true);
+        setGefordert(false);
+        setPreis(preis);
+        setAnzZimmer(4);
+    }
+    
     public void setOrt(String ort)
     {
         this.ort=ort;
@@ -162,6 +172,15 @@ public class Wohnung
         stock=strasse.substring(pos1,pos2);
         
         return stock;
+    }
+    
+    public void printWohnung()
+    
+    {
+        {
+            System.out.println(ort + ": " + balkon + ": " + gefordert + "," + preis);
+        }
+       
     }
 }
 

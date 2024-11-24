@@ -21,5 +21,12 @@ public class WohnungJUnit
         Wohnung wien;
         wien = new Wohnung ("wien","Spengergasse 10/5/3A", true,false,200000,4);
     }
-
+    
+    @Test
+    public void TestGunstigsterWohnung()
+    {
+        Wohnung wien;
+        wien = new Wohnung ("wien","Spengergasse 10/5/3A",true,false,200000);
+        assertEquals(wien.getPreis(),200000);
+    }
 }

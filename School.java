@@ -99,6 +99,7 @@ public class School
                 max = sessel0.getAlter();
             }
         }
+        
         if (sessel1 != null)
         {
             if (sessel1.getAlter() > max)
@@ -106,6 +107,7 @@ public class School
                 max = sessel1.getAlter();
             }
         }
+        
         if (sessel2 != null)
         {
             if (sessel2.getAlter() > max)
@@ -113,6 +115,7 @@ public class School
                 max = sessel2.getAlter();
             }
         }
+        
         return max;
     }
     
@@ -131,6 +134,7 @@ public class School
                 wer = sessel0;
             }
         }
+        
         if (sessel1 != null)
         {
             if (sessel1.getAlter() < min)
@@ -139,6 +143,7 @@ public class School
                 wer = sessel1;
             }
         }
+        
         if (sessel2 != null)
         {
             if (sessel2.getAlter() < min)

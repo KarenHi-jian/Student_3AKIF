@@ -4,11 +4,6 @@
     private boolean computer;   // are there computers in the room
     private int     size;       // number of seats
 
-    /*
-     * Constructor
-     * Parameters: Room number, computer, size
-     * It is creating a new Insatance of the class ClassRoom
-     */
     public ClassRoom(String roomNr, boolean computer, int size)
     {
         setRoomNr(roomNr);
@@ -110,6 +105,7 @@
         }
 
     }
+    
 }
 
 

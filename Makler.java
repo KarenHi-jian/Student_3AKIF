@@ -4,7 +4,7 @@ public class Makler
     private Wohnung objekt1;
     private Wohnung objekt2;
     
-    public void Wohnung( Wohnung wer)
+    public void hinzufugen( Wohnung wer)
     {
         if (objekt0 == null)
         {
@@ -32,14 +32,17 @@ public class Makler
     
     public void printWohnung()
     {
+        
         if (objekt0 != null)
         {
             objekt0.printWohnung();
         }
+        
         if (objekt1 != null)
         {
             objekt1.printWohnung();
         }
+        
         if (objekt2 != null)
         {
             objekt2.printWohnung();
@@ -53,11 +56,12 @@ public class Makler
         
         if (objekt0 != null)
         {
-            if (objekt0.getPreis()> min)
+            if (objekt0.getPreis() > min)
             {
                 min = objekt0.getPreis();
             }
         }
+        
         if (objekt1 != null)
         {
             if (objekt1.getPreis()> min)
@@ -65,6 +69,7 @@ public class Makler
                 min = objekt1.getPreis();
             }
         }
+        
         if (objekt2 != null)
         {
             if (objekt2.getPreis()>min)
@@ -74,8 +79,42 @@ public class Makler
         }
         return min;
     }
-    public int billigerWohnung()
+    
+    public int teuerstenWohnung()
     {
-        return 0;
+        int max;
+        max = 1000000000;
+        
+        
+        if (objekt0 != null)
+        {
+            if (objekt0.getPreis()< max)
+            {
+                max = objekt0.getPreis();
+               
+            }
+        }
+        
+        if (objekt1 != null)
+        {
+            if (objekt1.getPreis()< max)
+            {
+                max = objekt1.getPreis();
+              
+            }
+        }
+        
+        if (objekt2 != null)
+        {
+            if (objekt2.getPreis()< max)
+            {
+                max = objekt2.getPreis();
+                
+            }
+        }
+        
+        return max;
     }
+    
+
 }

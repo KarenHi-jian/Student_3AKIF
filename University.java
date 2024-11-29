@@ -48,51 +48,85 @@ public class University
             room2.printClassRoom();
         }
         
-    }
-    
-    public int biggestClassRoom()
+        }
+    public ClassRoom biggestClassRoom()
     {
         int max;
-        University ClassRoom;
-        
-        max= -999;
-        
-        
+        ClassRoom classroom;
+        max = -999;
+        classroom = null;
         
         if (room0 != null)
         {
-            if (room0.getSize() > max)
+            if(room0.getSize() > max)
             {
-               max = room0.getSize(); 
-               
+                max= room0.getSize();
+                classroom = room0;
             }
         }
         
         if (room1 != null)
         {
-            if (room1.getSize() > max)
+            if(room1.getSize()> max)
             {
-               max = room1.getSize(); 
-               
+                max = room1.getSize();
+                classroom = room1;
             }
         }
         
-        if (room2 != null)
+        if(room2 != null)
         {
             if(room2.getSize() > max)
             {
                 max = room2.getSize();
-               
+                classroom = room2;
             }
         }
         
-        return max;
-    }
+        return classroom;
+    }    
+        
+    // public int biggestClassRoom()
+    // {
+        // int max;
+        // max= -999;
+        
+        // if (room0 != null)
+        // {
+            // if (room0.getSize() > max)
+            // {
+               // max = room0.getSize(); 
+               
+            // }
+        // }
+        
+        // if (room1 != null)
+        // {
+            // if (room1.getSize() > max)
+            // {
+               // max = room1.getSize(); 
+               
+            // }
+        // }
+        
+        // if (room2 != null)
+        // {
+            // if(room2.getSize() > max)
+            // {
+                // max = room2.getSize();
+               
+            // }
+        // }
+        
+        // return max;
+    // }
     
+  
     public int miniSizeComputerRoom()
     {
         return 0;
     }
+    
 }
 
 

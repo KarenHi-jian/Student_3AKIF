@@ -39,7 +39,7 @@ public class UniversityTestBiggestRoom
         r1  = new ClassRoom("C2.22",false,25);
         uni.add(r0);
         uni.add(r1);
-        assertEquals (uni.biggestClassRoom(),20);
+        assertEquals (uni.biggestClassRoom(),25);
     }
     
     @Test
@@ -79,6 +79,7 @@ public class UniversityTestBiggestRoom
     {
         University uni;
         ClassRoom r0,r1,r2;
+        
         
         uni = new University();
         r0  = new ClassRoom("B1.11",false,30);

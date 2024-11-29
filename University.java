@@ -1,4 +1,4 @@
-
+ 
 public class University
 {
     private ClassRoom room0;
@@ -53,13 +53,18 @@ public class University
     public int biggestClassRoom()
     {
         int max;
+        University ClassRoom;
         
-        max=-999;
+        max= -999;
+        
+        
+        
         if (room0 != null)
         {
             if (room0.getSize() > max)
             {
                max = room0.getSize(); 
+               
             }
         }
         
@@ -68,6 +73,7 @@ public class University
             if (room1.getSize() > max)
             {
                max = room1.getSize(); 
+               
             }
         }
         
@@ -76,6 +82,7 @@ public class University
             if(room2.getSize() > max)
             {
                 max = room2.getSize();
+               
             }
         }
         

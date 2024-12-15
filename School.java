@@ -6,30 +6,47 @@ public class School
     
     public void anmelden(Student wer)
     {
-        if (sessel0 == null)
+        if(wer != null)
         {
-            sessel0 = wer;
-        }
-        else
-        {
-            if (sessel1 == null)
-            {            
-                sessel1 = wer;
-            }
-            else
+            if(wer.getSchool() == null)
             {
-                if (sessel2 == null)
+                if(sessel0 == null)
                 {
-                    sessel2 = wer;
+                    sessel0 = wer;
+                    wer.setSchool(this);
                 }
                 else
                 {
-                    System.out.println("Fehler: kein Platz!");
+                    if(sessel1 == null)
+                    {
+                        sessel1 = wer;
+                        wer.setSchool(this);
+                    }
+                    else
+                    {
+                        if(sessel2 == null)
+                        {
+                            sessel2 = wer;
+                            wer.setSchool(this);
+                        }
+                        else
+                        {
+                            System.out.println("Fehler: kein Platz");
+                        }
+                    }
                 }
             }
+             else
+            {
+            System.out.println("Fehler: schon in einer Schule angemeldet!");
+            }
+        }
+        else
+        {
+            System.out.println("Fehler: kein Student!");
         }
     }
-    
+       
     public void abmeldenJungerStudent()
     {
         Student wer;
@@ -47,29 +64,41 @@ public class School
     
     public void abmelden(Student wer)
     {
-        if (sessel0 == wer)
+        if(wer != null)
         {
-            sessel0 = null;
-        }
-        else
-        {
-            if (sessel1 == wer)
-            {
-                sessel1 = null;
-            }
-            else
-            {
-                if (sessel2 == wer)
+            if(sessel0 == wer)
                 {
-                    sessel2 = null;
+                    sessel0 = null;
+                    wer.setSchool(null);
                 }
                 else
                 {
-                    System.out.println("Fehler: nicht in dieser Schule!");
+                    if(sessel1 == wer)
+                    {
+                        sessel1 = null;
+                        wer.setSchool(null);
+                    }
+                    else
+                    {
+                        if(sessel2 == wer)
+                        {
+                            sessel2 = null;
+                            wer.setSchool(null);
+                        }
+                        else
+                        {
+                            System.out.println("Fehler: nicht in diese Schule");
+                        }
+                    }
                 }
             }
+             else
+            {
+            System.out.println("Fehler: kein gultiger Student!");
+            }
         }
-    }
+        
+   
     
     public void printSchool()
     {
@@ -77,10 +106,12 @@ public class School
         {
             sessel0.printStudent();
         }
+        
         if (sessel1 != null)
         {
             sessel1.printStudent();
         }
+        
         if (sessel2 != null)
         {
             sessel2.printStudent();
@@ -92,6 +123,7 @@ public class School
         int max;
         
         max = -999;
+        
         if (sessel0 != null)
         {
             if (sessel0.getAlter() > max)
@@ -126,6 +158,7 @@ public class School
         
         min = 999;
         wer = null;
+        
         if (sessel0 != null)
         {
             if (sessel0.getAlter() < min)

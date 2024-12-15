@@ -4,6 +4,7 @@ public class Student
     private int     alter;          // Alter des Studierenden
     private String  religion;       // ...
     private boolean matura;
+    private School school;
     
     // Constructor
     public Student(String name, int alter, String religion, boolean matura)
@@ -67,6 +68,11 @@ public class Student
     {
         this.matura = matura;
     }
+    
+    public void setSchool(School school)
+    {
+        this.school = school;
+    }
 
     public String getName()
     {
@@ -86,6 +92,11 @@ public class Student
     public boolean getMatura()
     {
         return matura;
+    }
+    
+    public School getSchool()
+    {
+        return school;
     }
     
     public String getInitialen()

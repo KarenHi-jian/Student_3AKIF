@@ -2,7 +2,8 @@
 {
     private String  roomNr;     // consists of building floor and room number
     private boolean computer;   // are there computers in the room
-    private int     size;       // number of seats
+    private int     size; // number of seats
+    private University university;
 
     public ClassRoom(String roomNr, boolean computer, int size)
     {
@@ -58,6 +59,11 @@
         }
     }
     
+    public void setUniversity(University university)
+    {
+        this.university = university;
+    }
+    
     public String getRoomNr()
     {
         return roomNr;
@@ -73,6 +79,11 @@
         return size;
     }
 
+    public University getUniversity()
+    {
+        return university;
+    }
+    
     public String getFloor()
     {
         //0123456789
